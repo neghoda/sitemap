@@ -2,7 +2,6 @@ package main
 
 import (
 	"flag"
-	"fmt"
 	"log"
 	"net/http"
 	"net/url"
@@ -40,7 +39,7 @@ func main() {
 	defer outputXML.Close()
 	err = marshal.SitemapToXML(sitemap, outputXML)
 	if err != nil {
-		fmt.Println("Done")
+		log.Fatal(err)
 	}
 }
 
